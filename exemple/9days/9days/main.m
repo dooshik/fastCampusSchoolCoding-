@@ -105,11 +105,34 @@ void Unnyun(int x){
     }
 }
 
+void googoo(int dan){
+    for (int i = 1; i<10; i++) {
+        printf("%d * %d = %d\n", dan, i, dan*i);
+    }
+}
+void factorial(int num){
+    int result =1;
+    for (int i =1; i<=num; i++) {
+        //i * i+1 * i+2
+        result *= i;
+    }
+    printf("%d는 factorial은 %d",num, result);
+}
+
+void game(int ans){
+    for (int i = 1; i<29; i++) {
+        // ans%10/3==0
+        printf("%d / %d = %d\n", ans%10, i, dan*i);
+        
+    }
+}
+
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        matchingGrade(90);
-        giveMomey(matchingGrade(90));
-        Unnyun(2000);
+      
+        factorial(5);
+        
         // insert code here...
         NSLog(@"Hello, World!");
     }
