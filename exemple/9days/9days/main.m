@@ -172,16 +172,17 @@ void triangularNum1(int num,int value){
     }
 }
 //각 자리수 더하는 함수
+
 void addAllNum(int num){
-    for (int i = 1 ; i <= num; i++) {
-        //그 자리의 숫자를 한자리 숫자로 만드는 함수
-        //구한 함수를 더하는 함수
-        
-        
+// 숫자를 나눠주는 변수 , 나눈 변수들 중에 마지막 한리 수만 나미는 변수 , 그 함수들을 더하는 변수
+     int result = 0;
+    while (num>0) {
+     result  += num%10;
+        num=num*0.1;
     }
+    
+    printf("%d\n",result);
 }
-
-
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -190,7 +191,8 @@ int main(int argc, const char * argv[]) {
 //        game(10);
         // insert code here...
 //        triangularNum(10);
-        triangularNum1(6, 25);
+        addAllNum(123);
+      //  triangularNum1(6, 25);
         NSLog(@"Hello, World!");
     }
     return 0;
