@@ -144,7 +144,16 @@ void hardGame(int ans){
            }
         
 //스왑 함수 만들기
+//함수 두개를 만들어서 A의 값이 a B의 값이 b 일때 A에서는 b 값을 B에서는 a값이 나오도록 해라
 
+
+void swap(int num){
+    if(num==1){
+        
+    }
+    
+    
+}
 //삼각수 구하기
 
 
@@ -191,7 +200,7 @@ int main(int argc, const char * argv[]) {
 //        game(10);
         // insert code here...
 //        triangularNum(10);
-        addAllNum(123);
+        addAllNum(111);
       //  triangularNum1(6, 25);
         NSLog(@"Hello, World!");
     }
