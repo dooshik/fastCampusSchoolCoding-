@@ -211,6 +211,26 @@ void hardmode(int num){
 }
 //369게임 언리미티드는 혼자 계속 생각하다 답이 안나와서 남이 한걸 참고해서 만들었습니다. bool값에대한 이해도가 떨어졌던게 원인 이었던거 같고
 //사실 아직도 잘 모르겠습니다. 그리고 디데이 구하는 건 남이 한 걸 봐도 이해를 못하겠습니다..
+
+//369게임 재도전
+void gameHardMode(int num){
+    bool result = true;
+    for (int i=0; i<=num; i++) {
+        for (int j=i; j>0; j=j/10) {
+            if(j%10==3||j%10==6||j%10==9){
+                result = true;
+                break;
+            }else {
+                result =false;
+            }
+        }if(result){
+            printf("*\n");
+        }else{
+            printf("%d\n", i);
+        }
+    }
+    
+}
 int main(int argc, const char * argv[]) {
     //    zzacksoo(2);
     //    scoreRank(100);
@@ -222,8 +242,8 @@ int main(int argc, const char * argv[]) {
     //   triangleNum(-1);
     // triangleNum2(10, 15);
     //addAllNumber(15);
-    hardmode(53);
-   //game369limit(53);
+//    hardmode(53);
+    gameHardMode(53);
     @autoreleasepool {
         // insert code here...
         NSLog(@"Hello, World!");
