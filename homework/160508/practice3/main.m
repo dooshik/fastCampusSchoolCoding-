@@ -231,6 +231,8 @@ void gameHardMode(int num){
     }
     
 }
+
+
 int main(int argc, const char * argv[]) {
     //    zzacksoo(2);
     //    scoreRank(100);
@@ -243,7 +245,8 @@ int main(int argc, const char * argv[]) {
     // triangleNum2(10, 15);
     //addAllNumber(15);
 //    hardmode(53);
-    gameHardMode(53);
+    //gameHardMode(53);
+
     @autoreleasepool {
         // insert code here...
         NSLog(@"Hello, World!");
