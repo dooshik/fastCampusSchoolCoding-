@@ -45,7 +45,7 @@ int lastNum(float num){
     
 }
 
-//오브젝트 c 제곱을 하는 함수
+//오브젝트 c로 만든 제곱을 하는 함수
 -(NSInteger) lastNum:(CGFloat)lstNum{
     NSInteger intValue = lstNum;
     NSInteger count = 0;
