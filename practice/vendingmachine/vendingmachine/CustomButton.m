@@ -12,7 +12,7 @@
 @property (nonatomic,weak) UIImageView*drikImg;
 @property (nonatomic,weak) UILabel *titleLB;
 @property (nonatomic,weak) UIButton *actionBtn;
-
+//LB은 항상 두글자를 다 대문자로 쓰시고 Btm 이나 Img Msg는 맨 앞글자만 대문자로 쓰시는데 습관인가요 관습인가요?
 @end
 @implementation CustomButton
 

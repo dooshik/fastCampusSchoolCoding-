@@ -47,7 +47,7 @@
         return NO;
     }
 }
--(NSDictionary *)changemoney
+-(NSDictionary *)changemoney //여기서도 m이 소문자로 되어있는데 고시면 chasher에 문제가 생겨서 방치.
 {
     //잔돈초기화
     NSMutableDictionary *changeDic =[[NSMutableDictionary alloc] initWithDictionary:@{@"500":@0 ,@"100":@0}];

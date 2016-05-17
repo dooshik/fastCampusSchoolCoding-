@@ -26,7 +26,7 @@
 //돈 컨트롤(남은돈표시 , 반환버튼)
 @property (nonatomic, weak)IBOutlet UIView *moneyControlArea;
 @property (nonatomic, weak)UILabel *moneyTitleLb;
-@property (nonatomic, weak)UITextField *remainmoneyShowTF;
+@property (nonatomic, weak)UITextField *remainMoneyShowTF;
 @property (nonatomic, weak)UIButton *moneyChangeBtn;
 //상태 표시화면
 @property (nonatomic, weak)UITextView *displayView;
@@ -35,6 +35,8 @@
 @property (nonatomic) TrayBox *traybox;
 @property (nonatomic) Casher *casher;
 @end
+
+// 여기까지 찾던 중 remainMoneyShowTF의 일부에서 "Money"의 M이 소문자로 되었던 것을 고침
 
 @implementation mainViewController
 
@@ -144,7 +146,7 @@
         remainMoneyShowTF.borderStyle = UITextBorderStyleLine;
         remainMoneyShowTF.textAlignment = NSTextAlignmentRight;
         [self.moneyControlArea addSubview:remainMoneyShowTF];
-        self.remainmoneyShowTF = remainMoneyShowTF;
+        self.remainMoneyShowTF = remainMoneyShowTF;
     
         //잔돈반환 버튼
         UIButton *moneyChangeBtn = [[UIButton alloc] init];
@@ -171,7 +173,7 @@
 
 //UI 레이아웃 수정
 -(void)updateLayout{
-    const CGFloat SIDE_MARGIN = 30.f;
+    const CGFloat SIDE_MARGIN = 30.f;//상수라 구분하기 쉽게 대문자를 사용한건가요?
     NSInteger offsetY = 20;
     
     
@@ -206,7 +208,7 @@
     offsetY += self.moneyControlArea.frame.size.height +10;
     {
         [self.moneyTitleLb setFrame:CGRectMake(0, 0, 61, 30)];
-        [self.remainmoneyShowTF setFrame:CGRectMake(63, 0, 200, 30)];
+        [self.remainMoneyShowTF setFrame:CGRectMake(63, 0, 200, 30)];
         [self.moneyChangeBtn setFrame:CGRectMake(270, 0, 35, 30)];
         
 
@@ -217,15 +219,15 @@
 }
 
 //action
--(void)didSelecteCustomButton:(nullable CustomButton *)costomBtn
+-(void)didSelecteCustomButton:(nullable CustomButton *)customBtn
 {
-    DrinkObject *drinkObj = [self.traybox.drinkinds objectAtIndex:costomBtn.tag];
+    DrinkObject *drinkObj = [self.traybox.drinkinds objectAtIndex:customBtn.tag];
     
     if ([self.casher buyDrink: drinkObj])
     {
         NSString *succesMsg =[NSString stringWithFormat:@"%@ 1개가 있습니다.\n",drinkObj.name];
         [self.displayView setText:[self .displayView.text stringByAppendingString:succesMsg]];
-        [self.remainmoneyShowTF setText:[NSString stringWithFormat:@"%zd",(long)self.casher.inputMoney]];
+        [self.remainMoneyShowTF setText:[NSString stringWithFormat:@"%zd",(long)self.casher.inputMoney]];
     }else{
         [self.displayView setText:[self.displayView.text stringByAppendingString:@"잔액이 부족합니다.\n"]];
     }
@@ -242,22 +244,24 @@
     }
     
   
-    [self.remainmoneyShowTF setText:[NSString stringWithFormat:@"%zd",self.casher.inputMoney]];
+    [self.remainMoneyShowTF setText:[NSString stringWithFormat:@"%zd",self.casher.inputMoney]];
 }
 -(IBAction)onTouchupInsideMoneyChangeBtn:(UIButton*)sender{
+
     NSDictionary *coinDic =[self.casher changemoney];
     NSNumber *coin500Count = coinDic[@"500"];
     NSNumber *coin100Count = coinDic[@"100"];
     NSInteger changemoney = (500*coin500Count.integerValue)+(100*coin100Count.integerValue);
+    //changemoney 가 오류라고 생각해서 고칠려고 했지만 고치면 느낌표가 뜨는데 이유를 모르겠어서 방치함.
     
     //남은돈 표시
-    [self.remainmoneyShowTF setText:[NSString stringWithFormat:@"%zd",(long)self.casher.inputMoney]];
+    [self.remainMoneyShowTF setText:[NSString stringWithFormat:@"%zd",(long)self.casher.inputMoney]];
     
     NSString *changeMsg = [NSString stringWithFormat:@"거스름돈은 %ld 입니다.(500원 동전 %@개, 100원 동전 %@개)\n",changemoney,coin500Count,coin100Count];
     self.displayView.text = [self.displayView.text stringByAppendingString:changeMsg];
     
 }
-
+//문법확인하는 곳에는 msg의 m도 소문자로 쓰라고 되어있는데 그게 두개의 단어가 연결됬을때도 꼭 소문자로 써야하는지는 의문스러움
 
 
 
