@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  SignUpView.m
 //  UIViewTest
 //
 //  Created by User on 2016. 6. 2..
 //  Copyright © 2016년 Shin. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SignUpView.h"
 
-@interface ViewController ()
+@interface SignUpView ()
 
 @end
 
-@implementation ViewController
+@implementation SignUpView
 
 - (void)viewDidLoad {
     [super viewDidLoad];

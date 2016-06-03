@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainView.h
 //  UIViewTest
 //
 //  Created by User on 2016. 6. 2..
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MainView : UIViewController
 
 @end

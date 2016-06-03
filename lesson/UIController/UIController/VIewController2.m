@@ -1,18 +1,18 @@
 //
-//  ViewController.m
-//  UIViewTest
+//  VIewController2.m
+//  UIController
 //
-//  Created by User on 2016. 6. 2..
+//  Created by User on 2016. 5. 31..
 //  Copyright © 2016년 Shin. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "VIewController2.h"
 
-@interface ViewController ()
+@interface VIewController2 ()
 
 @end
 
-@implementation ViewController
+@implementation VIewController2
 
 - (void)viewDidLoad {
     [super viewDidLoad];

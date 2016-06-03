@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  MainView.m
 //  UIViewTest
 //
 //  Created by User on 2016. 6. 2..
 //  Copyright © 2016년 Shin. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainView.h"
 
-@interface ViewController ()
+@interface MainView ()
 
 @end
 
-@implementation ViewController
+@implementation MainView
 
 - (void)viewDidLoad {
     [super viewDidLoad];
