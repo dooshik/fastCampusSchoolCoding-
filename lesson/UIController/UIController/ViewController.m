@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "ThirdViewController.h"
 @interface ViewController ()
 
 @end
@@ -23,5 +23,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(IBAction)nextBtn1:(id)sender{
+    ThirdViewController *thiedVC =[[ThirdViewController alloc]init];
+    [self.navigationController pushViewController:thiedVC animated:YES];
+    
+}
+
+
+
 
 @end

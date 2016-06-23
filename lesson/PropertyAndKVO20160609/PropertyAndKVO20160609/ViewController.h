@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
+//{
+//    NSInteger _count;
+//}
+@property (nonatomic)NSInteger count;
 
 @end
 

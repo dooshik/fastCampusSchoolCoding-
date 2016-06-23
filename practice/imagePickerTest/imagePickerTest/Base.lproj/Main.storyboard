@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1P2-Rr-XKm">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="DWN-Wl-xEt" appends="YES" id="fC4-Va-Y5H"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="1P2-Rr-XKm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CyL-1V-SJS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1P2-Rr-XKm" secondAttribute="bottom" id="DKh-jQ-aYi"/>
+                            <constraint firstAttribute="trailing" secondItem="1P2-Rr-XKm" secondAttribute="trailing" id="jhX-Qz-cOq"/>
+                            <constraint firstItem="1P2-Rr-XKm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kxj-Tl-oWl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="1P2-Rr-XKm" id="oFJ-Sy-k9F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="DWN-Wl-xEt">
+                    <connections>
+                        <action selector="recognizer:" destination="BYZ-38-t0r" id="9hn-It-uVx"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="305" y="362"/>
+        </scene>
+    </scenes>
+</document>

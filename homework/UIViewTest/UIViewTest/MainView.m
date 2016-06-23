@@ -8,6 +8,10 @@
 
 #import "MainView.h"
 
+#import "ViewController.h"
+#import "SignUpView.h"
+
+#import "DataCenter.h"
 @interface MainView ()
 
 @end

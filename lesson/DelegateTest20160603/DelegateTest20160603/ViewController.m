@@ -41,7 +41,7 @@
 //delegate 처럼 만들어서 사용하는 블럭 방법
 -(IBAction)showAlert:(id)sender{
     
-    
+        
     //이부분이 딜리게이트 처럼 만든 부분이다. block이라는 이름을 가진 트로토콜을 만든 듯한 느낌으로 만든 것이다
     //사람마다 다르지만 이렇게 쓸 문구를 묶어서 정리해서쓰기도 하고 block자리에 if block문 안에 있는 문구를 사용해서 코드를 짜기도 한다.
     id block = ^(UIAlertAction *_Nonnull action){

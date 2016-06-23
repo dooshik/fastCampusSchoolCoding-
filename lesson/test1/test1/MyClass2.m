@@ -7,7 +7,15 @@
 //
 
 #import "MyClass2.h"
-
+#import "MyClass.h"
 @implementation MyClass2
+
+
+
+ *what = [[MyClass alloc]init];
+
+-(NSInteger)whawhat:(NSInteger)num{
+ 
+}
 
 @end

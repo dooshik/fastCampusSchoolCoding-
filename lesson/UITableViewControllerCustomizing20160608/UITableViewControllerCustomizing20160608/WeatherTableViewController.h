@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef  NS_ENUM(NSInteger, WeatherType){
+    WeatherTypeKorea = 0,
+    WeatherTypeWorld
+};
 
 @interface WeatherTableViewController : UITableViewController
+
+@property (nonatomic) WeatherType weatherType;
 
 @end

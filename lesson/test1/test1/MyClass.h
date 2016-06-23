@@ -10,4 +10,6 @@
 
 @interface MyClass : NSObject
 
+-(NSInteger) what :(NSInteger)num;
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "SecondViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,6 +16,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window =[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    SecondViewController *sedVC = [[ SecondViewController alloc]init];
+    //SecondViewController *sedVC = [[ SecondViewController alloc]initWithNubName:@"SecondViewController.xib"bundle:nil];
+    UINavigationController *naviC =[[UINavigationController alloc]initWithRootViewController:sedVC];
+    self.window .rootViewController =naviC;
+    [self.window makeKeyAndVisible];
+    // 새로 키원도우를 만들고 보여줘라라는 명령어 
+    
     // Override point for customization after application launch.
     return YES;
 }

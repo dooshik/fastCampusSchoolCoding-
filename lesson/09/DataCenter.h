@@ -6,8 +6,19 @@
 //  Copyright © 2016년 Shin. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
+//@end까지 데이터 센터의
 @interface DataCenter : NSObject
 
+
++(instancetype)defaultData;
+
+-(NSMutableArray *)dataForSection:(NSInteger)section;
+
+-(void)insertNewItemInSecondSection;
+
+-(void)removeFirstSectionItemAtIndex :(NSInteger)index;
+
 @end
+

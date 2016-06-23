@@ -10,4 +10,9 @@
 
 @implementation MyClass
 
+-(NSInteger) what :(NSInteger)num{
+    return 5;
+    
+}
+
 @end

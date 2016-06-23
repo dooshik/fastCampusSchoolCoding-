@@ -9,6 +9,8 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property(nonatomic) IBOutlet UILabel *label;
+@property(nonatomic) IBOutlet UITextField *textField;
 
 @end
 
@@ -16,8 +18,50 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    
+//    [button addTarget:self action:@selector(touchButton)
+//     forControlEvents:UIControlEventTouchUpInside];
+//
+
+
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
+
+-(IBAction)setbutton:(UIButton *)button{
+    
+       
+//    [button addTarget:self action:@selector(touchButton)
+//     forControlEvents:UIControlEventTouchUpInside];
+//    
+        NSString *result = self.textField.text;
+        
+        self.label.text = [NSString stringWithFormat:@"결과 : %@", result];
+    
+//        [self.textField resignFirstResponder];
+    
+ 
+    
+//    NSLog(@"%zd", button.tag);
+//    
+    if(button.tag == 1) {
+        
+        self.label.text = [NSString stringWithFormat:@"결과1 : %@", result];
+        button.titleLabel.text = @"111";
+    }
+    else if(button.tag == 2) {
+        self.label.text = [NSString stringWithFormat:@"결과2 : %@", result];
+        
+    }
+    
+//
+//    
+//    [self.textField resignFirstResponder];
+    
+}
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

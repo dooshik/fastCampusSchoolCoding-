@@ -8,17 +8,47 @@
 
 #import "AppDelegate.h"
 
+#import "ViewController.h"
+#import "SignUpView.h"
+#import "MainView.h"
+
+#import "DataCenter.h"
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    self.window =[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
+    UINavigationController * navi;
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    if ([[DataCenter shareIdInstance] autoLogin]) {
+        MainView *vc =[storyBoard instantiateViewControllerWithIdentifier:@"MainViewController"];
+        navi = [[UINavigationController alloc]initWithRootViewController:vc];}
+    else{
+        ViewController *vc =[storyBoard instantiateViewControllerWithIdentifier:@"LoginPageViewConltroller"];
+        navi =[[UINavigationController alloc]initWithRootViewController:vc];
+    }
+    self.window.rootViewController= navi;
+    [self.window makeKeyAndVisible];
     return YES;
-}
+        
+    }
+//    ViewController *sedVC = [[ ViewController alloc]init];
+//    //SecondViewController *sedVC = [[ SecondViewController alloc]initWithNubName:@"SecondViewController.xib"bundle:nil];
+//    UINavigationController *naviC =[[UINavigationController alloc]initWithRootViewController:sedVC];
+//    self.window .rootViewController =naviC;
+//    [self.window makeKeyAndVisible];
+//    // 새로 키원도우를 만들고 보여줘라라는 명령어
+//    
+//    // Override point for customization after application launch.
+  
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

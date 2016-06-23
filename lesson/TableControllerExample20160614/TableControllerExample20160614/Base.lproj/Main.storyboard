@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ozr-fP-GId">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EZt-Ch-QuO">
+            <objects>
+                <viewController id="lmx-ts-ITm" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fjz-4u-7k9"/>
+                        <viewControllerLayoutGuide type="bottom" id="R2P-cm-Wwn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qlj-aJ-Pzf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rax-fj-7r2">
+                                <rect key="frame" x="20" y="20" width="300" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="eaC-fc-VXn" appends="YES" id="WRm-vW-ZdR"/>
+                                </connections>
+                            </textView>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ouh-ug-O5O">
+                                <rect key="frame" x="320" y="20" width="300" height="600"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99598985910415649" green="0.99221748113632202" blue="0.99198514223098755" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="lJM-Lf-51i" appends="YES" id="n0T-CP-vTg"/>
+                                </connections>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcv-gM-93K">
+                                <rect key="frame" x="328" y="72" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="goNextViewButton:" destination="lmx-ts-ITm" eventType="touchUpInside" id="MJk-9I-vke"/>
+                                    <segue destination="DNL-jr-p5X" kind="push" id="b0o-8m-ynd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vft-mT-ezw">
+                                <rect key="frame" x="328" y="118" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="nextViewButton:" destination="lmx-ts-ITm" eventType="touchUpInside" id="V2N-QK-nZE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Rax-fj-7r2" firstAttribute="height" secondItem="Qlj-aJ-Pzf" secondAttribute="height" id="2Lh-cv-ruc"/>
+                            <constraint firstItem="Rax-fj-7r2" firstAttribute="width" secondItem="Qlj-aJ-Pzf" secondAttribute="width" multiplier="0.5" id="6Lj-Dk-YYU"/>
+                            <constraint firstItem="Ouh-ug-O5O" firstAttribute="top" secondItem="Rax-fj-7r2" secondAttribute="top" id="HNS-cD-Vx2"/>
+                            <constraint firstItem="Ouh-ug-O5O" firstAttribute="bottom" secondItem="Rax-fj-7r2" secondAttribute="bottom" id="IOh-z0-7FB"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Rax-fj-7r2" secondAttribute="leading" id="IhP-bS-6ka"/>
+                            <constraint firstItem="Ouh-ug-O5O" firstAttribute="width" secondItem="Rax-fj-7r2" secondAttribute="width" id="e2C-5b-gV9"/>
+                            <constraint firstItem="Ouh-ug-O5O" firstAttribute="leading" secondItem="Rax-fj-7r2" secondAttribute="trailing" id="kLe-Zo-SO5"/>
+                            <constraint firstItem="Rax-fj-7r2" firstAttribute="top" secondItem="fjz-4u-7k9" secondAttribute="bottom" id="mEE-R3-3xn"/>
+                            <constraint firstItem="Ouh-ug-O5O" firstAttribute="width" secondItem="Rax-fj-7r2" secondAttribute="width" multiplier="0.5" id="uy2-CS-JIJ"/>
+                            <constraint firstItem="Ouh-ug-O5O" firstAttribute="height" secondItem="Rax-fj-7r2" secondAttribute="height" id="xav-vG-u0Q"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="uy2-CS-JIJ"/>
+                                <exclude reference="xav-vG-u0Q"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="Y2g-g0-lQx"/>
+                    <connections>
+                        <outlet property="label" destination="Ouh-ug-O5O" id="MJ7-P5-a1x"/>
+                        <outlet property="textView" destination="Rax-fj-7r2" id="Qan-Et-avD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uQW-3o-KRF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eaC-fc-VXn">
+                    <connections>
+                        <action selector="whiteRecognizer:" destination="lmx-ts-ITm" id="weX-Fr-iE8"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="lJM-Lf-51i">
+                    <connections>
+                        <action selector="blackRecognizer:" destination="lmx-ts-ITm" id="RKJ-ny-ubW"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3142" y="326"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="bHb-Wt-3jG">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="DNL-jr-p5X" customClass="SecondViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eYp-KZ-7Fe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wsr-R3-lCl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3PY-8x-l2V">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhE-8T-M3l">
+                                <rect key="frame" x="43" y="136" width="514" height="329"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="329" id="427-vT-0t6"/>
+                                    <constraint firstAttribute="width" constant="514" id="oGx-JE-oyq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yF-4g-e4e">
+                                <rect key="frame" x="289" y="98" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="secondButton:" destination="DNL-jr-p5X" eventType="touchUpInside" id="H1r-Gg-et0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rhE-8T-M3l" firstAttribute="centerX" secondItem="3PY-8x-l2V" secondAttribute="centerX" id="Cbm-h5-4ja"/>
+                            <constraint firstItem="rhE-8T-M3l" firstAttribute="centerY" secondItem="3PY-8x-l2V" secondAttribute="centerY" id="FaE-hq-lvY"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="5kJ-f1-iSe"/>
+                    <navigationItem key="navigationItem" id="Qso-ui-pQD"/>
+                    <connections>
+                        <outlet property="secondLabel" destination="rhE-8T-M3l" id="Lol-N7-uZV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MIv-PL-d4g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3861" y="326"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="X29-jQ-yAk">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ozr-fP-GId" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="yF1-cs-QhU">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Pht-5O-aK5" kind="relationship" relationship="viewControllers" id="i9h-yb-Ymn"/>
+                        <segue destination="DNL-jr-p5X" kind="relationship" relationship="viewControllers" id="CoV-iA-4jN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fU5-jp-zkv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1254" y="213"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bT6-L0-GIU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pht-5O-aK5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="ffC-90-reZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6wA-yK-zqO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lmx-ts-ITm" kind="relationship" relationship="rootViewController" id="Vpd-WU-SnH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SM2-hc-2L8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2330" y="326"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="b0o-8m-ynd"/>
+    </inferredMetricsTieBreakers>
+</document>

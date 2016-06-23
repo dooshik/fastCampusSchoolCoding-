@@ -7,9 +7,12 @@
 //
 
 #import "SettingTableViewController.h"
+#import "SettingTableViewCell.h"
+#import "DataCenter.h"
+#import "WeatherTableViewController.h"
 
-@interface SettingTableViewController ()
-
+@interface SettingTableViewController ()<UITableViewDataSource,UITabBarDelegate,SettingTableViewCellDelegate>
+@property (nonatomic) DataCenter *dataCenter;
 @end
 
 @implementation SettingTableViewController
@@ -17,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.dataCenter = [DataCenter defaultData ];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -32,24 +36,76 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    
+    return [self.dataCenter numberOfSectionsforSettingTable];
+    
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    //return [self.dataCenter numberOfRoewsforSectioninSettingTable:self];
+    return 2;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSArray *dataArray = [self.dataCenter settingTableDataForSection:indexPath.section];
+    NSString *text = dataArray[indexPath.row];
     
-    return cell;
+    if (indexPath.section == 0) {
+        SettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingCell"];
+        if (cell==nil) {
+            cell = [[SettingTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault
+                                              reuseIdentifier:@"SettingCell"];
+            cell.delegate =self;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        [cell.textLabel setText:text];
+        BOOL isFuncionOn = [self.dataCenter inOnForSetting:indexPath.row];
+        [cell.settingSwitch setOn:isFuncionOn];
+        
+        return cell;
+    }else{
+        
+    
+        //스토리 보드에 있는 뷰를 연결해 주는 부분
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SubTitleCell"
+                                                                forIndexPath:indexPath];
+        
+        
+        [cell.textLabel setText:text];
+        
+        return cell;
+    }
 }
-*/
+#pragma mark - Setting Table View Cell delegate
+-(void)settingTableViewCellSwitchValueChanged:(SettingTableViewCell *)cell isOn:(BOOL)isOn{
+    
+    NSIndexPath *cellIndex =[self.tableView indexPathForCell:cell];
+    
+    [self.dataCenter setSettingOn:cellIndex.row
+                             isOn:isOn];
+    
+    NSLog(@"cell Index: %ld - %ld,isOn: %d",cellIndex.section,cellIndex.row,isOn);
+}
+
+#pragma - UITableView delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"Row Selected: %ld - %ld",indexPath.section,indexPath.row);
+    if (indexPath.section ==0) {
+        return;
+    }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    UITableViewCell *sender =[tableView cellForRowAtIndexPath:indexPath];
+    
+    [self performSegueWithIdentifier:@"ShowDetailWeather" sender:sender];
+    
+}
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -85,14 +141,26 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+//In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+    
+    
+    UITableViewCell *senderCell = (UITableViewCell *)sender;
+    
+    NSLog(@"segue will action: %@",senderCell.textLabel.text);
+    
+    WeatherTableViewController *tableViewController = segue.destinationViewController;
+    
+    if ([senderCell.textLabel.text isEqualToString:@"한국날씨"]) {
+        tableViewController.weatherType = WeatherTypeKorea;
+    }else{
+        tableViewController.weatherType = WeatherTypeWorld;
+    }
+    
+   }
+
 
 @end

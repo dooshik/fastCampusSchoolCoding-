@@ -16,12 +16,49 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+   
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+-(IBAction)showAlert:(id)sender{
+    
+      
+    
+    UIAlertController *alertControler =[UIAlertController alertControllerWithTitle:@"확인요망"
+                                                                            message:@"수업은 어때햇는가?"
+                                                                     preferredStyle:UIAlertControllerStyleAlert];
+    
+    //handler라는 저 부분은 왜 필요한 것인가요?
+    UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"좋았다"
+                                                        style:UIAlertActionStyleDefault
+                                
+                                                      handler:^(UIAlertAction *_Nonnull action)
+                                {[action.title isEqualToString:@"예"];
+                        
+                                }]; 
+    
+    
+    UIAlertAction *noAction = [UIAlertAction actionWithTitle:@"좋지않지않다."
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action)
+                               {[action.title isEqualToString:@"아니요"];
+                                   
+                               }];
+    
+   UIAlertAction * whWhat = [UIAlertAction actionWithTitle:@"whWhat?"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction *_Nonnull action)
+                             {   [action.title isEqualToString:@"아니요"];
+                                                       
+                             }];
+    
+    
+    
+    [alertControler addAction : whWhat];
+    
+    [alertControler addAction:noAction];
+    
+    [alertControler addAction:okAction];
+    [self presentViewController:alertControler animated:YES completion:nil ];
+   }
 
 @end

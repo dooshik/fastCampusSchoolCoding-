@@ -8,7 +8,12 @@
 
 #import "ViewController.h"
 
+
+
 @interface ViewController ()
+<UITextFieldDelegate>
+@property (nonatomic,weak) IBOutlet UITextField *textField;
+
 
 @end
 
@@ -16,8 +21,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
+    self.textField.delegate =self;
+    [UIView animateWithDuration:5 delay:5 options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         [self.textField setFrame:CGRectMake(100, 100, 100, 30)];
+                     }completion:^(BOOL finished){
+                         [self.textField setFrame:CGRectMake(40, 40, 100, 30)];
+                     }];
+    }
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
