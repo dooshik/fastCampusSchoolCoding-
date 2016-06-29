@@ -7,8 +7,11 @@
 //
 
 #import "TableViewController.h"
-
+#import "DataCenter.h"
 @interface TableViewController ()
+
+@property(nonatomic)DataCenter *dataCenter;
+@property(nonatomic)NSArray *array ;
 
 @end
 
@@ -16,40 +19,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dataCenter =[DataCenter defultData];
+    self.array = [self.dataCenter.dic objectForKey:@"1월"];
+    NSLog(@"%zd",[self.array count]);
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSDateFormatter *today =[[NSDateFormatter alloc]init];
+    [today setDateFormat:@"MM"];
+    NSDate
+    NSString *data =[today stringFromDate:data];
+    NSLog(@"%@",data);
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
+    return self.array.count;
+   }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+     self.array = [self.dataCenter.dic objectForKey:@"2월"];
+    cell.textLabel.text = [self.array objectAtIndex:indexPath.row];
     
-    // Configure the cell...
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

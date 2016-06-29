@@ -7,7 +7,21 @@
 //
 
 #import "DataCenter.h"
+@interface DataCenter()
 
+@end
 @implementation DataCenter
++(instancetype)defultData{
+    static DataCenter *dataCenter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        dataCenter =[[DataCenter alloc]init];
+//        dataCenter.dic = @{@"1월":@"추워,귤",@"2월":@"춥지,귤귤"};
+        dataCenter.dic = @{@"1월":@[@"추워",@"귤"],
+                           @"2월":@[@"춥지",@"귤귤"]};
+    });
+    return dataCenter;
+}
+
 
 @end

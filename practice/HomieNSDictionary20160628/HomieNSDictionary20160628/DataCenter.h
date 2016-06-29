@@ -10,4 +10,7 @@
 
 @interface DataCenter : NSObject
 
+@property(nonatomic)NSDictionary *dic;
++(instancetype)defultData;
+
 @end
