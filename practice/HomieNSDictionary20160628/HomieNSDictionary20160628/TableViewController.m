@@ -20,15 +20,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dataCenter =[DataCenter defultData];
-    self.array = [self.dataCenter.dic objectForKey:@"1월"];
-    NSLog(@"%zd",[self.array count]);
     
-    NSDateFormatter *today =[[NSDateFormatter alloc]init];
-    [today setDateFormat:@"MM"];
-    NSDate
-    NSString *data =[today stringFromDate:data];
-    NSLog(@"%@",data);
-}
+    NSString *date = @"";
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSDate *now = [NSDate date];
+    [formatter setDateFormat:@"MM"];
+    
+    date = [formatter stringFromDate:now];
+    NSString *string = [[NSString alloc]initWithString:date];
+    NSLog(@"%@",date);
+
+    self.array = [self.dataCenter.dic objectForKey:string];
+    NSLog(@"%@",self.array);
+    
+   }
 
 #pragma mark - Table view data source
 
@@ -43,7 +48,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-     self.array = [self.dataCenter.dic objectForKey:@"2월"];
     cell.textLabel.text = [self.array objectAtIndex:indexPath.row];
     
     
